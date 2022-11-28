@@ -1,3 +1,7 @@
+<?php 
+    include '../../controllers/peminjamanController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,14 +19,14 @@
         <nav>
             <ul>
                 <li>
-                    <a href="./">
-                        <img src="../assets/images/home-icon.png" alt="" srcset="">
+                    <a href="../Beranda">
+                        <img src="../assets/images/home-icon.png" width=40 alt="" srcset="">
                         <p>Beranda</p>
                     </a>
                 </li>
 
-                <li>
-                    <a href="./">
+                <li selected>
+                    <a href="../DaftarRuangan">
                         <img src="../assets/images/ruang-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Ruangan</p>
                     </a>
@@ -30,7 +34,7 @@
 
 
                 <li>
-                    <a href="./">
+                    <a href="../Peminjaman">
                         <img src="../assets/images/peminjaman-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Peminjaman</p>
                     </a>
@@ -38,7 +42,7 @@
 
 
                 <li>
-                    <a href="./">
+                    <a href="../err">
                         <img src="../assets/images/contact-icon.png" width=40 alt="" srcset="">
                         <p>Hubungi Kami</p>
                     </a>
@@ -50,16 +54,32 @@
         <button id="keluar" class="light">Keluar</button>
     </aside>
     <main>
-        <h1>Alur Peminjaman Ruangan <br> FILKOM UB</h1>
-        <ol>
-            <li>Memilih ruangan yang dibutuhkan dan pastikan ruangan tersebut tersedia</li>
-            <li>Mengisi form peminjaman yang disediakan oleh sistem </li>
-            <li>Menunggu konfirmasi dari pihak admin</li>
-            <li>Mengirimkan KTM dan Dokumen yang diperlukan ke pihak admin di <b>ruang A 1.1</b></li>
-            <li>Setelah ruangan selesai, kembali ke pihak admin untuk mengambil KTM dan menandakan ruangan telah selesai digunakan</li>
-        </ol>
-        <button>Pinjam Ruangan</button>
+        <h1>Pilih Gedung</h1>
 
+        <h2>Silahkan Memilih Gedung dari Ruangan</h2>
+
+        <form action="" method="get">
+
+            <div class="card-container">
+                <div class="card gedung">
+                    <img src="../assets/images/gedung-f.png" width=300 height=165 alt="" srcset="">
+                    <p>Gedung F</p>
+                </div>
+
+                <div class="card gedung">
+                    <img src="../assets/images/gedung-g.png" width=300 height=165 alt="" srcset="">
+                    <p>Gedung G</p>
+                </div>
+                
+                <div class="card gedung">
+                    <img src="../assets/images/gedung-gkm.png" width=300 height=165 alt="" srcset="">
+                    <p>Gedung GKM</p>
+                </div>
+            </div>
+
+        </form>
+
+        
     </main>
 
     </div>

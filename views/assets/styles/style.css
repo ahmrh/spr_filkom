@@ -69,6 +69,11 @@ nav a:hover{
     background: #5E8995;
 }
 
+nav li[selected] a{
+    background: #5E8995;
+
+}
+
 nav a p{
     margin: 0 0 0 0.5em;
     padding-top: 0.6em;
@@ -104,10 +109,36 @@ main{
 main h1{
     text-align: center;
 }
+main h2{
+    margin: 0.5em 0;
+}
 main ol{
     width: 60rem;
     margin-bottom: 4em;
 }
 main li{
     margin-bottom: 1em;
+}
+
+.card-container{
+    display: flex;
+    margin: 2em;
+}
+
+.card{
+    background: #CDD7D6;
+    padding: 0.75em 1.5em 0em;
+    margin: 1em 1.5em;
+
+    border-radius: 5px;
+}
+.card p{
+    text-align: center;
+    font-weight: bold;
+    margin: 0.5em 0em;
+}
+
+.card.gedung:hover{
+    cursor: pointer;
+    filter: brightness(95%);
 }

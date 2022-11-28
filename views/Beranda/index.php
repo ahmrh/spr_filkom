@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/style.css">
-    <title>Daftar Ruangan</title>
+    <title>Beranda</title>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
     <aside>
         <nav>
             <ul>
-                <li>
+                <li selected>
                     <a href="../Beranda">
                         <img src="../assets/images/home-icon.png" width=40 alt="" srcset="">
                         <p>Beranda</p>
@@ -22,14 +22,14 @@
                 </li>
 
                 <li>
-                    <a href="../DaftarRuangan">
+                    <a href="../DaftarRuangan/">
                         <img src="../assets/images/ruang-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Ruangan</p>
                     </a>
                 </li>
 
 
-                <li selected>
+                <li>
                     <a href="../Peminjaman">
                         <img src="../assets/images/peminjaman-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Peminjaman</p>
@@ -50,11 +50,19 @@
         <button id="keluar" class="light">Keluar</button>
     </aside>
     <main>
-        <h1>Daftar Peminjaman Ruangan</h1>
+        <h1>Alur Peminjaman Ruangan <br> FILKOM UB</h1>
+        <ol>
+            <li>Memilih ruangan yang dibutuhkan dan pastikan ruangan tersebut tersedia</li>
+            <li>Mengisi form peminjaman yang disediakan oleh sistem </li>
+            <li>Menunggu konfirmasi dari pihak admin</li>
+            <li>Mengirimkan KTM dan Dokumen yang diperlukan ke pihak admin di <b>ruang A 1.1</b></li>
+            <li>Setelah ruangan selesai, kembali ke pihak admin untuk mengambil KTM dan menandakan ruangan telah selesai digunakan</li>
+        </ol>
 
+        <a href="../DaftarRuangan/">
+            <button>Pinjam Ruangan</button>
+        </a>
 
-
-        
     </main>
 
     </div>
