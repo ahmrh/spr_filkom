@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+
+body{
+    font-family: 'Manjari', sans-serif;
+    font-size: 20px;
+    color: #102542;
+
+    height: 100vh;
+    margin: 0;
+}
+button{
+    background-color: #4D7C8A;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+
+    padding: 1em 2em;
+    border: none;
+    border-radius: 10px;
+    
+    align-self: center;
+}
+
+button:hover{
+    cursor: pointer;
+    background: #5E8995;
+
+}
+
+button.light{
+    background-color: #CDD7D6;
+    color: #102542;
+
+}
+
+button.light:hover{
+    filter: opacity(80%);
+}
+
+.row{
+    display: flex;
+    height: 100%;
+}
+nav ul{
+    margin: 0px;
+    padding: 0px;
+}
+nav li{
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 0.8em;
+
+}
+
+nav a{
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    padding: 0.8em 1.5em;
+}
+
+nav a:hover{
+    background: #5E8995;
+}
+
+nav a p{
+    margin: 0 0 0 0.5em;
+    padding-top: 0.6em;
+}
+
+#keluar{
+    margin: 2em 0;
+}
+
+
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: #4D7C8A;
+    width: 20rem;
+
+    padding-top: 5rem;
+}
+
+main{
+    width: calc(100% - 20rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+
+    padding-top: 5rem;
+    font-size: 1.5rem;
+    
+}
+
+main h1{
+    text-align: center;
+}
+main ol{
+    width: 60rem;
+    margin-bottom: 4em;
+}
+main li{
+    margin-bottom: 1em;
+}
