@@ -1,23 +1,22 @@
 <?php 
 
+    require_once $PATH.'models/config/database.php';
+    
     class peminjaman{
-        private $ruangan;
-        private $idRuangan;
-        private $gedung;
+        private $id;
+        private $idPeminjam;
+        private $idRuang;
         private $waktu;
+        private $pelaksanaKegiatan;
+        private $namaKegiatan;
+        private $disetujui;
 
-        function mengubahStateRuangan(){
-            
-        }
-        function pilihRuangan($idRuangan){
-
-        }
-        function daftarRuanganTersedia($gedung, $waktu){
+        function __construct(){
 
         }
-        function pinjamRuangan($idRuangan){
 
-        }
+        
+
     }
 
 ?>

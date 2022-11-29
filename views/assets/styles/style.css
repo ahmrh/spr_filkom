@@ -2,13 +2,13 @@
 
 body{
     font-family: 'Manjari', sans-serif;
-    font-size: 20px;
+    font-size: 20px ;
     color: #102542;
 
     height: 100vh;
     margin: 0px;
 }
-button{
+button, .button{
     background-color: #4D7C8A;
     color: white;
     font-weight: bold;
@@ -21,20 +21,25 @@ button{
     align-self: center;
 }
 
-button:hover{
+button:hover, .button:hover{
     cursor: pointer;
     background: #5E8995;
 
 }
 
-button.light{
+button.light, .button.light{
     background-color: #CDD7D6;
     color: #102542;
 
 }
 
-button.light:hover{
+button.light:hover, .button.light:hover{
     filter: opacity(80%);
+}
+
+button[selected], .button[selected]{
+    background: #5E8995;
+    color: white;
 }
 
 .row{
@@ -102,7 +107,6 @@ main{
     align-items: center;  
 
     padding-top: 5rem;
-    font-size: 1.5rem;
     
 }
 
@@ -122,23 +126,63 @@ main li{
 
 .card-container{
     display: flex;
-    margin: 2em;
 }
 
 .card{
+    color: #102542;
     background: #CDD7D6;
     padding: 0.75em 1.5em 0em;
     margin: 1em 1.5em;
 
     border-radius: 5px;
 }
+.card:hover{
+    color: white;
+}
+
 .card p{
     text-align: center;
     font-weight: bold;
     margin: 0.5em 0em;
 }
 
-.card.gedung:hover{
-    cursor: pointer;
-    filter: brightness(95%);
+.horizontal-container{
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+
+    margin: 1rem 0;
+}
+::-webkit-scrollbar {
+    display: none;
+  }
+.horizontal-item{
+    margin: 0 1rem;
+}
+
+button[name="day"]{
+    padding: 0.75em 1em;
+}
+
+button[name="ruangan"]{
+    margin: 0.5em;
+}
+
+.table-container{
+    margin: 1.5em;
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+}
+
+.selector-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
 }

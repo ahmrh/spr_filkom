@@ -1,5 +1,9 @@
 <?php 
-    include '../../controllers/peminjamanController.php';
+    require_once '../../global_config.php';
+
+    include_once $PATH.'controllers/peminjamanController.php';
+    include_once $PATH.'controllers/ruanganController.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -53,33 +57,17 @@
         </nav>
         <button id="keluar" class="light">Keluar</button>
     </aside>
+
     <main>
-        <h1>Pilih Gedung</h1>
-
-        <h2>Silahkan Memilih Gedung dari Ruangan</h2>
-
-        <form action="" method="get">
-
-            <div class="card-container">
-                <div class="card gedung">
-                    <img src="../assets/images/gedung-f.png" width=300 height=165 alt="" srcset="">
-                    <p>Gedung F</p>
-                </div>
-
-                <div class="card gedung">
-                    <img src="../assets/images/gedung-g.png" width=300 height=165 alt="" srcset="">
-                    <p>Gedung G</p>
-                </div>
-                
-                <div class="card gedung">
-                    <img src="../assets/images/gedung-gkm.png" width=300 height=165 alt="" srcset="">
-                    <p>Gedung GKM</p>
-                </div>
-            </div>
-
-        </form>
-
-        
+        <?php 
+            if(empty($_GET['gedung'])){
+                include_once './pilih-gedung.php';
+            } 
+            else{
+                include_once './pilih-ruangan.php';
+            }
+            
+        ?>
     </main>
 
     </div>

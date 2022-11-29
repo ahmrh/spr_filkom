@@ -1,5 +1,9 @@
 <?php 
 
+
+    require_once $PATH."models/peminjaman.php";
+    require_once $PATH."models/ruangan.php";
+    
     class peminjamanController{
         private $peminjam;
         private $ruangan;
@@ -8,9 +12,6 @@
         function melakukanPeminjaman($ruangan, $data){
             
         }
-
-
-
 
         /* Fungsi Lain */
         function mengkonfirmasiPeminjaman($ruangan){

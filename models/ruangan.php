@@ -1,4 +1,5 @@
 <?php 
+    require_once $PATH.'models/config/database.php';
 
     class ruangan{
         private $id;
