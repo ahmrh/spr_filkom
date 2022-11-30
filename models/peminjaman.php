@@ -16,8 +16,22 @@
         }
 
         function tambahPeminjaman($data){
-            $conn = db_connnect();
-            $query = "INSERT INTO";
+            $conn = db_connect();
+            $idRuangan = $data['ruangan'];
+            $idPeminjam = 1;
+            $namaKegiatan = $data['namaKegiatan'];
+            $pelaksanaKegiatan = $data['pelaksanaKegiatan'];
+            $waktu = $data['waktu'];
+            $mulai = $data['mulai'];
+            $berhenti = $data['berhenti'];
+
+
+            $sql = "INSERT INTO peminjaman (idRuangan, idPeminjam, namaKegiatan, pelaksanaKegiatan, waktu,  mulai, berhenti) VALUES
+                ('$idRuangan', '$idPeminjam', '$namaKegiatan', '$pelaksanaKegiatan', '$waktu', '$mulai', '$berhenti');
+            ";
+
+            return $conn->query($sql);
+
         }
 
         function getPeminjaman($idRuangan){

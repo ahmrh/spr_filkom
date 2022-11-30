@@ -1,8 +1,8 @@
 <?php 
 
-
     require_once $PATH."models/peminjaman.php";
     require_once $PATH."models/ruangan.php";
+
     
     class peminjamanController{
         private $peminjam;
@@ -19,7 +19,7 @@
         }
 
         function melakukanPeminjaman($ruangan, $data){
-            
+            return $this->peminjaman->tambahPeminjaman($data);  
         }
 
         /* Fungsi Lain */

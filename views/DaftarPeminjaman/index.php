@@ -1,3 +1,6 @@
+<?php 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/style.css">
-    <title>Daftar Ruangan</title>
+    <title>Daftar Peminjaman</title>
 </head>
 <body>
 
@@ -22,7 +25,7 @@
                     </a>
                 </li>
 
-                <li selected>
+                <li >
                     <a href="../DaftarRuangan">
                         <img src="../assets/images/ruang-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Ruangan</p>
@@ -30,7 +33,7 @@
                 </li>
 
 
-                <li>
+                <li selected>
                     <a href="../DaftarPeminjaman">
                         <img src="../assets/images/peminjaman-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Peminjaman</p>
@@ -52,6 +55,23 @@
     </aside>
     <main>
         <h1>Daftar Peminjaman Ruangan</h1>
+        <div class="row">
+            <div class="col">
+                <h2>Disetujui</h2>
+                <?php 
+                    $peminjaman_disetujui = $p_controller->
+                
+                ?>
+
+            </div>
+            <div class="col">
+                <h2>Menunggu Persetujuan</h2>
+                <?php 
+                    $peminjaman_menunggu
+                
+                ?>
+            </div>
+        </div>
 
 
 

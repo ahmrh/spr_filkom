@@ -102,7 +102,7 @@ aside{
 .peminjaman-container{
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    padding:4em 0 0;
     width: 80%;
 
     height: 100rem;
@@ -121,7 +121,7 @@ aside{
 }
 
 .peminjaman-container button{
-    margin-top: 10rem;
+    margin-top: 5rem;
 }
 
 main{
@@ -219,4 +219,56 @@ button[name="ruangan"][full]{
     justify-content: center;
     align-items: center;
     width: 80rem;
+}
+
+.form-peminjaman{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-peminjaman .col{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-peminjaman input{
+
+    font-size: 1.3rem;
+    margin: 0.5em 1em 2.5em;
+
+}
+
+
+.form-peminjaman input[type="text"]{
+    width: 30rem;
+    padding: 0.5em;
+    border: 0px;
+    border-bottom: 1px solid black;
+
+}
+.form-peminjaman input[type="text"]:focus{
+    outline: none;
+
+    border: 0px;
+    border-bottom: 2px solid black;
+
+}
+.form-peminjaman input[type="time"]{
+    width: 10rem;
+    border: 0px;
+    border-bottom: 1px solid black;
+
+}
+.form-peminjaman input[type="time"]:focus{
+    outline: none;
+
+    border: 0px;
+    border-bottom: 2px solid black;
+
+}
+
+.time-group{
+    display: flex;
+    flex-direction: row;
 }

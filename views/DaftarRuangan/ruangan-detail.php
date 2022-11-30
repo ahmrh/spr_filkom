@@ -1,20 +1,4 @@
-<?php 
-    $idRuangan = $_POST['ruangan'];
-    $waktu = $_POST['waktu'];
-
-    $ruangan = $r_controller->pilihRuangan($idRuangan);
-    
-    $gedung = $ruangan[3];
-    $nomorRuangan = $ruangan[2];
-
-?>
-
-<h1>Ruangan <?=$gedung. " " .$nomorRuangan; ?> </h1>
-
-<h2><?=$waktu ?></h2>
-
-
-<form action="../Peminjaman" method="post" class="peminjaman-container">
+<form action="./" method="post" class="peminjaman-container">
 
     <h2>List Peminjam</h2>
     <ul>
@@ -34,9 +18,11 @@
 
     </ul>
 
+    <input name='waktu' hidden value='<?= $waktu ?>'></input>
+    <input name='ruangan' hidden value='<?= $idRuangan; ?>'></input> 
+    <input name='form' hidden value=0></input> 
     
     <button>Pinjam Ruangan</button>
 
    
-    <input name='ruangan' hidden value='<?= $idRuangan; ?>'></input> 
 </form>

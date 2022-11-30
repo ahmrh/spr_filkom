@@ -57,7 +57,7 @@
     <main>
         <?php 
             if(isset($_POST['ruangan']) && isset($_POST['waktu']) && isset($_POST['ruangan'])){
-                include_once './ruangan-detail.php';
+                include_once './ruangan.php';
             }
             else if(empty($_GET['gedung'])){
                 include_once './pilih-gedung.php';
