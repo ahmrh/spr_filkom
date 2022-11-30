@@ -4,7 +4,8 @@
     $PATH = "../../";
 
     // db_create();
+    // table_drop();
     // table_create();
-    // fill_ruangan();
+    // table_fill();
     
 ?>

@@ -20,10 +20,8 @@
             
         }
         function daftarRuanganTersedia($gedung, $waktu){
-            $this->gedung = $gedung;
-            $this->waktu = $waktu;
 
-            return $this->ruangan->getRuanganTersedia($gedung);
+            return $this->ruangan->getRuanganTersedia($gedung, $waktu);
         }
 
         function pinjamRuangan($idRuangan){

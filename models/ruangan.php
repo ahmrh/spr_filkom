@@ -11,7 +11,7 @@
             $this->tersedia = true;
         }
 
-        function getRuanganTersedia(){
+        function getRuanganTersedia($gedung, $waktu){
             $conn = db_connect();
 
             $sql = "SELECT * FROM ruangan WHERE tersedia=true";
