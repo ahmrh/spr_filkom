@@ -22,7 +22,7 @@
                     </a>
                 </li>
 
-                <li>
+                <li selected>
                     <a href="../DaftarRuangan">
                         <img src="../assets/images/ruang-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Ruangan</p>
@@ -30,8 +30,8 @@
                 </li>
 
 
-                <li selected>
-                    <a href="../Peminjaman">
+                <li>
+                    <a href="../DaftarPeminjaman">
                         <img src="../assets/images/peminjaman-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Peminjaman</p>
                     </a>

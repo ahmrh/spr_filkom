@@ -1,10 +1,8 @@
 <?php 
 
-    $query_arr = $_POST;
-    
-    $day = isset($query_arr['day'])? $query_arr['day'] : date('d');
-    $month = isset($query_arr['month'])? $query_arr['month'] : date('m');
-    $ruangan = isset($query_arr['ruangan'])? $query_arr['ruangan'] : null;
+    $day = isset($_POST['day'])? $_POST['day'] : date('d');
+    $month = isset($_POST['month'])? $_POST['month'] : date('m');
+    $ruangan = isset($_POST['ruangan'])? $_POST['ruangan'] : null;
 
     $year = date('y');
     $gedung = $_GET['gedung'];
@@ -27,13 +25,13 @@
 <form action='./?gedung=<?= $gedung;?>' method='POST'>
 
     <?php 
-        if(isset($query_arr['month']))
+        if(isset($_POST['month']))
             echo "<input name='month' hidden value=$month></input>";
         
-        if(isset($query_arr['day']))
+        if(isset($_POST['day']))
             echo "<input name='day' hidden value=$day></input>";  
             
-        if(isset($query_arr['ruangan']))
+        if(isset($_POST['ruangan']))
             echo "<input name='ruangan' hidden value=$ruangan></input>";  
     ?>
 
@@ -71,21 +69,18 @@
                 } else{
                     $waktu = "";
                 }
-                
-
-                $r_controller = new ruanganController();
 
                 $ruangan_tersedia = $r_controller->daftarRuanganTersedia($gedung, $waktu);
                 
                 if(isset($ruangan_tersedia)){
                     foreach($ruangan_tersedia as $r){
-                        if($r[2] > 10){
-                            echo "<button name='ruangan' full class='light' value={$r[0]}>{$r[1]}{$r[0]}</button>";
+                        if($r[3] > 10){
+                            echo "<button name='ruangan' full class='light' value={$r[0]}>{$r[2]}{$r[1]}</button>";
                         }
-                        if($r[2] > 0){
-                            echo "<button name='ruangan' low class='light' value={$r[0]}>{$r[1]}{$r[0]}</button>";
+                        if($r[3] > 0){
+                            echo "<button name='ruangan' low class='light' value={$r[0]}>{$r[2]}{$r[1]}</button>";
                         } else{
-                            echo "<button name='ruangan' class='light' value={$r[0]}>{$r[1]}{$r[0]}</button>";
+                            echo "<button name='ruangan' class='light' value={$r[0]}>{$r[2]}{$r[1]}</button>";
                         }
                     }
                 }
@@ -95,13 +90,5 @@
         </div>
 
     </div>
-    
-    <?php 
-        if(isset($_POST['waktu']) && isset($_POST['ruangan'])){
-
-            echo $_POST['waktu']. $_POST['ruangan'];
-        }
-
-    ?>
 
 </form>

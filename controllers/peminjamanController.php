@@ -7,7 +7,16 @@
     class peminjamanController{
         private $peminjam;
         private $ruangan;
+        private $peminjaman;
         private $data = array();
+
+        function __construct(){
+            $this->peminjaman = new peminjaman();
+        }
+
+        function semuaPeminjaman($idRuangan){
+            return $this->peminjaman->getPeminjaman($idRuangan);
+        }
 
         function melakukanPeminjaman($ruangan, $data){
             

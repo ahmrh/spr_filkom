@@ -20,6 +20,23 @@
             $query = "INSERT INTO";
         }
 
+        function getPeminjaman($idRuangan){
+            $conn = db_connect();
+
+            $sql = "SELECT namaKegiatan, pelaksanaKegiatan,
+                TIME_FORMAT(mulai, '%h.%i %p'), 
+                TIME_FORMAT(berhenti, '%h.%i %p') 
+                FROM peminjaman WHERE idRuangan='$idRuangan'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                return $result->fetch_all();
+              } else {
+                echo "<br>0 results";
+            }
+
+        }
+
     }
 
 ?>

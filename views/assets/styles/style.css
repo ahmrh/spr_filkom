@@ -99,6 +99,30 @@ aside{
 
     padding-top: 5rem;
 }
+.peminjaman-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 80%;
+
+    height: 100rem;
+    
+}
+
+.peminjaman-container ul{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin: 0px;
+    padding: 0;
+}
+
+.peminjaman-container ul li{
+    margin: 0 5rem;
+}
+
+.peminjaman-container button{
+    margin-top: 10rem;
+}
 
 main{
     width: calc(100% - 20rem);
@@ -107,7 +131,6 @@ main{
     align-items: center;  
 
     padding-top: 5rem;
-    
 }
 
 main h1{

@@ -1,9 +1,5 @@
 <?php 
-    require_once '../../config/global.php';
-
-    include_once $PATH.'controllers/peminjamanController.php';
-    include_once $PATH.'controllers/ruanganController.php';
-    
+    require '../../config/global.php';
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +34,7 @@
 
 
                 <li>
-                    <a href="../Peminjaman">
+                    <a href="../DaftarPeminjaman">
                         <img src="../assets/images/peminjaman-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Peminjaman</p>
                     </a>

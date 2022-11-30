@@ -70,8 +70,8 @@
                 pelaksanaKegiatan VARCHAR(50) NOT NULL,
                 namaKegiatan VARCHAR(50) NOT NULL,
                 waktu DATE NOT NULL,
-                mulai VARCHAR(10) DEFAULT '',
-                berhenti VARCHAR(10) DEFAULT '',
+                mulai TIME(6) DEFAULT '00:00:00',
+                berhenti TIME(6) DEFAULT '00:00:00',
                 disetujui BOOLEAN NOT NULL DEFAULT FALSE,
                 FOREIGN KEY (idPeminjam) REFERENCES pengguna (id),
                 FOREIGN KEY (idRuangan) REFERENCES ruangan (id)

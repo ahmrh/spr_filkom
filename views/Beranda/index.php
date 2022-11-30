@@ -30,7 +30,7 @@
 
 
                 <li>
-                    <a href="../Peminjaman">
+                    <a href="../DaftarPeminjaman">
                         <img src="../assets/images/peminjaman-icon.png" width=40 alt="" srcset="">
                         <p>Daftar Peminjaman</p>
                     </a>

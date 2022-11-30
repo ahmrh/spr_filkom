@@ -17,10 +17,10 @@
         }
 
         function pilihRuangan($idRuangan){
-            
+            return $this->ruangan->getRuangan($idRuangan);
         }
         function daftarRuanganTersedia($gedung, $waktu){
-            return $this->ruangan->getRuangan($gedung);
+            return $this->ruangan->getRuanganTersedia($gedung);
         }
 
         function pinjamRuangan($idRuangan){
