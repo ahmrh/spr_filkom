@@ -68,16 +68,27 @@
             <?php 
                 if(isset($_POST['month']) && isset($_POST['day']) && isset($_POST['ruangan'])){
                     $waktu = date("Y-m-d", mktime(0, 0, 0, $_POST['month'], $_POST['day'], $year));
+                } else{
+                    $waktu = "";
                 }
+                
 
+                $r_controller = new ruanganController();
 
-                for($i=1; $i <= 40; $i++){
-                    if($i == $ruangan){
-                        echo "<button name='ruangan' selected class='light' value=$i>$i</button>";
-                    } else{
-                        echo "<button name='ruangan' class='light' value=$i>$i</button>";
+                $ruangan_tersedia = $r_controller->daftarRuanganTersedia($gedung, $waktu);
+                
+                var_dump($ruangan_tersedia);
+                if(isset($ruangan_tersedia)){
+                    foreach($ruangan_tersedia as $r){
+                        if($ruangan == $r[2]){
+                            echo "<button name='ruangan' selected class='light' value={$r[2]}>{$r[2]}</button>";
+                        } else{
+                            echo "<button name='ruangan' class='light' value={$r[2]}>{$r[2]}</button>";
+                        }
                     }
                 }
+                
+                
             ?>
         </div>
 
@@ -86,9 +97,6 @@
     <?php 
 
         echo "Tanggal ". $waktu. " Ruangan ". $ruangan;
-
-        $r_controller = new ruanganController();
-        echo $r_controller->daftarRuanganTersedia($gedung, $waktu);
     ?>
 
 </form>

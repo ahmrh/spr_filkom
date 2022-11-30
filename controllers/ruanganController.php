@@ -23,8 +23,9 @@
             $this->gedung = $gedung;
             $this->waktu = $waktu;
 
-            
+            return $this->ruangan->getRuanganTersedia($gedung);
         }
+
         function pinjamRuangan($idRuangan){
         }
     }
