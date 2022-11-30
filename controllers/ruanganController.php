@@ -10,16 +10,20 @@
         private $waktu;
 
         function __construct(){
-            $this->$ruangan = new ruangan();
-            
+            $this->ruangan = new ruangan();
         }
 
         function mengubahStateRuangan(){
         }
+
         function pilihRuangan($idRuangan){
+            
         }
         function daftarRuanganTersedia($gedung, $waktu){
-            $conn = $db_connect();
+            $this->gedung = $gedung;
+            $this->waktu = $waktu;
+
+            
         }
         function pinjamRuangan($idRuangan){
         }

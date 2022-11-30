@@ -4,6 +4,9 @@
     
     $day = isset($query_arr['day'])? $query_arr['day'] : date('d');
     $month = isset($query_arr['month'])? $query_arr['month'] : date('m');
+    $ruangan = isset($query_arr['ruangan'])? $query_arr['ruangan'] : 0;
+
+
     $year = date('y');
     $gedung = $_GET['gedung'];
 
@@ -30,6 +33,9 @@
         
         if(isset($query_arr['day']))
             echo "<input name='day' hidden value=$day></input>";  
+            
+        if(isset($query_arr['ruangan']))
+            echo "<input name='ruangan' hidden value=$ruangan></input>";  
     ?>
 
     <div class="selector-container">
@@ -60,8 +66,17 @@
 
         <div id="ruangan-selector" class="table-container">
             <?php 
+                if(isset($_POST['month']) && isset($_POST['day']) && isset($_POST['ruangan'])){
+                    $waktu = date("Y-m-d", mktime(0, 0, 0, $_POST['month'], $_POST['day'], $year));
+                }
+
+
                 for($i=1; $i <= 40; $i++){
-                    echo "<button name='ruangan' class='light' value=$i>$i</button>";
+                    if($i == $ruangan){
+                        echo "<button name='ruangan' selected class='light' value=$i>$i</button>";
+                    } else{
+                        echo "<button name='ruangan' class='light' value=$i>$i</button>";
+                    }
                 }
             ?>
         </div>
@@ -69,12 +84,11 @@
     </div>
     
     <?php 
-        if(isset($_POST['month']) && isset($_POST['day'])){
-            $waktu = date("Y-m-d", mktime(0, 0, 0, $_POST['month'], $_POST['day'], $year));
-            echo $waktu;
-        }
 
-        $controller = new ruanganController();
+        echo "Tanggal ". $waktu. " Ruangan ". $ruangan;
+
+        $r_controller = new ruanganController();
+        echo $r_controller->daftarRuanganTersedia($gedung, $waktu);
     ?>
 
 </form>

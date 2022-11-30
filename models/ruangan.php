@@ -11,13 +11,18 @@
             $this->tersedia = true;
         }
 
+        function getRuangan(){
+            $conn = $db_connect();
+            
+        }
+
     }
 
     function fillRuangan(){
         $conn = $db_connect();
 
         $sql = "
-            INSERT INTO database
+            INSERT INTO spr_db VALUES(
         ";
         
     }
