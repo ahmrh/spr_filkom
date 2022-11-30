@@ -1,5 +1,5 @@
 <?php 
-    require_once '../../global_config.php';
+    require_once '../../config/global.php';
 
     include_once $PATH.'controllers/peminjamanController.php';
     include_once $PATH.'controllers/ruanganController.php';

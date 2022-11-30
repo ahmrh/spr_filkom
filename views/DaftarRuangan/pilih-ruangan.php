@@ -74,10 +74,7 @@
             echo $waktu;
         }
 
-        $controller = new ruanganController;
+        $controller = new ruanganController();
     ?>
-
-    <script>
-    </script>
 
 </form>

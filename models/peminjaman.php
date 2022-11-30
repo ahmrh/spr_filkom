@@ -1,6 +1,6 @@
 <?php 
 
-    require_once $PATH.'models/config/database.php';
+    require_once $PATH.'config/database.php';
     
     class peminjaman{
         private $id;
@@ -15,7 +15,10 @@
 
         }
 
-        
+        function tambahPeminjaman($data){
+            $conn = db_connnect();
+            $query = "INSERT INTO";
+        }
 
     }
 
