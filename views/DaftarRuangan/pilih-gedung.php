@@ -6,18 +6,18 @@
 <form action="./" method="get">
 
     <div name="gedung-form" id="gedung-form" class="card-container">
-        <button type="submit" name="gedung" value="f" class="card">
+        <button type="submit" name="gedung" value="F" class="card">
             <img src="../assets/images/gedung-f.png" width=300 height=165 alt="" srcset="">
             <p>Gedung F</p>
         </button>
 
 
-        <button type="submit" name="gedung" value="g" class="card">
+        <button type="submit" name="gedung" value="G" class="card">
             <img src="../assets/images/gedung-g.png" width=300 height=165 alt="" srcset="">
             <p>Gedung G</p>
         </button>
         
-        <button type="submit" name="gedung" value="gkm" class="card">
+        <button type="submit" name="gedung" value="GKM" class="card">
             <img src="../assets/images/gedung-gkm.png" width=300 height=165 alt="" srcset="">
             <p>Gedung GKM</p>
         </button>

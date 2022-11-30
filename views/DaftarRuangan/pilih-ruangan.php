@@ -6,7 +6,6 @@
     $month = isset($query_arr['month'])? $query_arr['month'] : date('m');
     $ruangan = isset($query_arr['ruangan'])? $query_arr['ruangan'] : 0;
 
-
     $year = date('y');
     $gedung = $_GET['gedung'];
 
@@ -66,8 +65,9 @@
 
         <div id="ruangan-selector" class="table-container">
             <?php 
-                if(isset($_POST['month']) && isset($_POST['day']) && isset($_POST['ruangan'])){
+                if(isset($_POST['month']) && isset($_POST['day'])){
                     $waktu = date("Y-m-d", mktime(0, 0, 0, $_POST['month'], $_POST['day'], $year));
+                    echo "<input name='waktu' hidden value=$waktu></input>";
                 } else{
                     $waktu = "";
                 }
@@ -77,17 +77,20 @@
 
                 $ruangan_tersedia = $r_controller->daftarRuanganTersedia($gedung, $waktu);
                 
-                var_dump($ruangan_tersedia);
                 if(isset($ruangan_tersedia)){
                     foreach($ruangan_tersedia as $r){
-                        if($ruangan == $r[2]){
-                            echo "<button name='ruangan' selected class='light' value={$r[2]}>{$r[2]}</button>";
+                        if($r[2] > 10){
+                            echo "<button name='ruangan' full class='light' value={$r[0]}>{$r[1]}{$r[0]}</button>";
+
+                        }
+                        if($r[2] > 0){
+                            echo "<button name='ruangan' low class='light' value={$r[0]}>{$r[1]}{$r[0]}</button>";
                         } else{
-                            echo "<button name='ruangan' class='light' value={$r[2]}>{$r[2]}</button>";
+                            echo "<button name='ruangan' class='light' value={$r[0]}>{$r[1]}{$r[0]}</button>";
                         }
                     }
                 }
-                
+ 
                 
             ?>
         </div>
@@ -95,8 +98,11 @@
     </div>
     
     <?php 
+        if(isset($_POST['waktu']) && isset($_POST['ruangan'])){
 
-        echo "Tanggal ". $waktu. " Ruangan ". $ruangan;
+            echo $_POST['waktu']. $_POST['ruangan'];
+        }
+
     ?>
 
 </form>

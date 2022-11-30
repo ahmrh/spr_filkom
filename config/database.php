@@ -70,6 +70,8 @@
                 pelaksanaKegiatan VARCHAR(50) NOT NULL,
                 namaKegiatan VARCHAR(50) NOT NULL,
                 waktu DATE NOT NULL,
+                mulai VARCHAR(10) DEFAULT '',
+                berhenti VARCHAR(10) DEFAULT '',
                 disetujui BOOLEAN NOT NULL DEFAULT FALSE,
                 FOREIGN KEY (idPeminjam) REFERENCES pengguna (id),
                 FOREIGN KEY (idRuangan) REFERENCES ruangan (id)
@@ -114,14 +116,30 @@
             INSERT INTO ruangan (nomorRuangan, gedung) VALUES 
         ";
 
-        $ruangan_f = "";
+        // ruang f
+        $ruangan = "";
         for($i = 1; $i <= 3; $i++){
             for($j = 1; $j <= 8; $j++){
-                $ruangan_f = $ruangan_f . "('$i.$j', 'F'), ";
+                $ruangan = $ruangan . "('$i.$j', 'F'), ";
             }
         }
 
-        $sql = $sql . $ruangan_f." ('2.9', 'F');";
+        // ruang g
+        for($i = 1; $i <= 1; $i++){
+            for($j = 1; $j <= 6; $j++){
+                $ruangan = $ruangan . "('$i.$j', 'G'), ";
+            }
+        }
+
+        // ruang gkm
+        $ruangan = $ruangan . "('1', 'GKM'), ";
+        $ruangan = $ruangan . "('3', 'GKM'), ";
+        $ruangan = $ruangan . "('3.1', 'GKM'), ";
+        $ruangan = $ruangan . "('4.1', 'GKM'), ";
+        $ruangan = $ruangan . "('4.2', 'GKM'), ";
+        
+
+        $sql = $sql . $ruangan." ('2.9', 'F');";
 
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
@@ -154,10 +172,10 @@
             ) 
             VALUES (
                 (SELECT id FROM pengguna WHERE nomorInduk = '205150207111006'), 
-                (SELECT id FROM ruangan WHERE nomorRuangan = '2.2'), 
+                (SELECT id FROM ruangan WHERE nomorRuangan = '2.2' AND gedung='F'), 
                 'Ahmad R. H.', 
                 'Study Session', 
-                '2022-1-4'
+                '2022-01-02'
             ),
             
 
@@ -167,23 +185,23 @@
             for($j=1; $j <=6; $j++){
                 $sql = $sql . "(
                     (SELECT id FROM pengguna WHERE nomorInduk = '205150207111006'), 
-                    (SELECT id FROM ruangan WHERE nomorRuangan = '$i.$j'), 
+                    (SELECT id FROM ruangan WHERE nomorRuangan = '$i.$j' AND gedung='F'), 
                     'Ahmad R. H.', 
                     'Dummy Session', 
-                    '2022-1-4'
+                    '2022-01-02'
                 ), ";
             }
         }
 
         $sql = $sql . "(
             (SELECT id FROM pengguna WHERE nomorInduk = '205150207111006'), 
-            (SELECT id FROM ruangan WHERE nomorRuangan = '2.9'), 
+            (SELECT id FROM ruangan WHERE nomorRuangan = '2.9' AND gedung='F'), 
             'Ahmad R. H.', 
             'Dummy Session', 
-            '2022-1-4'
+            '2022-01-02'
         );";
 
-
+        echo $sql;
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {

@@ -11,20 +11,22 @@
             $this->tersedia = true;
         }
 
-        function getRuanganTersedia($gedung, $waktu){
+        function getRuangan($gedung){
             $conn = db_connect();
 
-            $sql = "SELECT * FROM ruangan WHERE tersedia=true";
+            $sql = "SELECT ruangan.nomorRuangan, ruangan.gedung, count(peminjaman.id) FROM ruangan LEFT JOIN peminjaman ON ruangan.id = peminjaman.idRuangan WHERE gedung='$gedung' GROUP BY ruangan.id;";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                // output data of each row
                 return $result->fetch_all();
               } else {
                 echo "<br>0 results";
               }
-
         }
+
+        
+
+        
 
     }
 

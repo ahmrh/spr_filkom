@@ -60,12 +60,16 @@
 
     <main>
         <?php 
-            if(empty($_GET['gedung'])){
+            if(isset($_POST['ruangan']) && isset($_POST['waktu']) && $_POST['ruangan'] != 0){
+                echo "babi";
+            }
+            else if(empty($_GET['gedung'])){
                 include_once './pilih-gedung.php';
             } 
             else{
                 include_once './pilih-ruangan.php';
             }
+
             
         ?>
     </main>

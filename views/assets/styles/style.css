@@ -171,12 +171,23 @@ button[name="ruangan"]{
     margin: 0.5em;
 }
 
+button[name="ruangan"][low]{
+
+    background: #8DAAB0;
+    color: #102542;
+}
+button[name="ruangan"][full]{
+
+    background: #4D7C8A;
+    color: white;
+}
+
 .table-container{
     margin: 1.5em;
 
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(10, auto);
+    grid-template-columns: repeat(9, auto);
 }
 
 .selector-container{
