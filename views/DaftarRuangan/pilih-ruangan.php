@@ -4,7 +4,7 @@
     
     $day = isset($query_arr['day'])? $query_arr['day'] : date('d');
     $month = isset($query_arr['month'])? $query_arr['month'] : date('m');
-    $ruangan = isset($query_arr['ruangan'])? $query_arr['ruangan'] : 0;
+    $ruangan = isset($query_arr['ruangan'])? $query_arr['ruangan'] : null;
 
     $year = date('y');
     $gedung = $_GET['gedung'];
@@ -81,7 +81,6 @@
                     foreach($ruangan_tersedia as $r){
                         if($r[2] > 10){
                             echo "<button name='ruangan' full class='light' value={$r[0]}>{$r[1]}{$r[0]}</button>";
-
                         }
                         if($r[2] > 0){
                             echo "<button name='ruangan' low class='light' value={$r[0]}>{$r[1]}{$r[0]}</button>";

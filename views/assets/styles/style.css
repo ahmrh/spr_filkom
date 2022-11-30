@@ -191,7 +191,6 @@ button[name="ruangan"][full]{
 }
 
 .selector-container{
-
     display: flex;
     flex-direction: column;
     justify-content: center;

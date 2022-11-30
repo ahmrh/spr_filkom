@@ -60,8 +60,8 @@
 
     <main>
         <?php 
-            if(isset($_POST['ruangan']) && isset($_POST['waktu']) && $_POST['ruangan'] != 0){
-                echo "babi";
+            if(isset($_POST['ruangan']) && isset($_POST['waktu']) && isset($_POST['ruangan'])){
+                include_once './ruangan-detail.php';
             }
             else if(empty($_GET['gedung'])){
                 include_once './pilih-gedung.php';
