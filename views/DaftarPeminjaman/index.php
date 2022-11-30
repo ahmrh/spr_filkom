@@ -1,5 +1,5 @@
 <?php 
-
+    require '../../config/global.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/style.css">
+    <link rel="stylesheet" href="../assets/styles/style.css?<?php echo time(); ?>">
     <title>Daftar Peminjaman</title>
 </head>
 <body>
@@ -55,21 +55,35 @@
     </aside>
     <main>
         <h1>Daftar Peminjaman Ruangan</h1>
-        <div class="row">
+        <div class="row daftar-peminjaman-container">
             <div class="col">
                 <h2>Disetujui</h2>
                 <?php 
-                    $peminjaman_disetujui = $p_controller->
+                    $peminjaman_disetujui = $p_controller->daftarPeminjaman($idPengguna, 1);
                 
                 ?>
 
             </div>
-            <div class="col">
+            <div class="col ">
                 <h2>Menunggu Persetujuan</h2>
+                <ul>
                 <?php 
-                    $peminjaman_menunggu
-                
+                    $peminjaman_menunggu = $p_controller->daftarPeminjaman($idPengguna, 0);
+
+                    if(isset($peminjaman_menunggu)){
+                        foreach($peminjaman_menunggu as $p){
+                            echo "<li><p><b>Ruang {$p[4]}{$p[5]}</b></p>
+                            <p>Kegiatan = {$p[0]}</p>
+                            <p>Peminjam = {$p[1]}</p>
+                            <p>Waktu = {$p[2]} - {$p[3]} WIB </p>
+                        </li>";
+                            
+                        }
+
+                    }
                 ?>
+                        
+                </ul>
             </div>
         </div>
 

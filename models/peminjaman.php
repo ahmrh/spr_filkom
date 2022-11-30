@@ -48,6 +48,26 @@
               } else {
                 echo "<br>0 results";
             }
+        }
+
+        function getDaftarPeminjaman($idPengguna, $disetujui){
+            $conn = db_connect();
+
+
+            $sql = "SELECT namaKegiatan, pelaksanaKegiatan, TIME_FORMAT(mulai, '%h.%i %p'), TIME_FORMAT(berhenti, '%h.%i %p'), ruangan.gedung, ruangan.nomorRuangan FROM peminjaman LEFT JOIN ruangan on peminjaman.idRuangan=ruangan.id WHERE idPeminjam='$idPengguna' AND disetujui=$disetujui;
+
+                ";
+            
+
+
+
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                return $result->fetch_all();
+              } else {
+                echo "<br>0 results";
+            }
 
         }
 

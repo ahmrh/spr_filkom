@@ -18,6 +18,10 @@
             return $this->peminjaman->getPeminjaman($idRuangan);
         }
 
+        function daftarPeminjaman($idPengguna, $disetujui){
+            return $this->peminjaman->getDaftarPeminjaman($idPengguna, $disetujui);
+        }
+
         function melakukanPeminjaman($ruangan, $data){
             return $this->peminjaman->tambahPeminjaman($data);  
         }
